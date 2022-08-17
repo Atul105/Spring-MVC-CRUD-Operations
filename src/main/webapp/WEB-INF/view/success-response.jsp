@@ -11,5 +11,4 @@
 	<h4 style="color:green">Product is ${action} successfully !</h4>
 </body>
 </html>
-Footer
-© 2022 GitHub, Inc.
+© Atul

@@ -40,9 +40,20 @@ public class ProductDao {
 		
 		public int addProduct(Product product) {
 			
-			String ADD_PRODUCT= "INSERT into product_data(name, price) values ( ? , ?)";
+			String ADD_PRODUCT= "insert into product_data(name, price) values (?, ?)";
 			return template.update(ADD_PRODUCT, product.getName(), product.getPrice());
 		}
 		
+		//update product
+		public int updateProduct(Product product) {
+			String UPDATE_PRODUCT = "UPDATE product_data set name=?, price=? where id=?";
+			return template.update(UPDATE_PRODUCT, product.getName(), product.getPrice(), product.getId());
+		}
+		
+		//delet product
+		public int deleteProduct(Product product) {
+			String DELETE_PRODUCT = "delete from product_data where id=?";
+			return template.update(DELETE_PRODUCT, product.getId());
+		}
 		
 }
